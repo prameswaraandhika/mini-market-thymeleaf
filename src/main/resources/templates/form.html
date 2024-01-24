@@ -17,10 +17,11 @@
 <!--            <option th:each="${categories}"-->
 <!--                    th:text="${category.name}"-->
 <!--                    th:value="${category.id}"></option>-->
-        </select>
-        <input th:field="${product.name}" placeholder="name">
-        <input th:field="${product.price}" placeholder="price">
-        <input th:field="${product.discount}" placeholder="discount">
+        </select> <br>
+        <input th:field="*{name}" placeholder="name"> <br>
+        <input th:field="*{price}" placeholder="price"> <br>
+        <input th:field="*{discount}" placeholder="discount"> <br>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
