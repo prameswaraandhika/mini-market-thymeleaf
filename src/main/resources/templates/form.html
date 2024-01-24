@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>FORM PRODUCT</h1>
+    <form method="post"
+          th:object="${product}"
+          th:action="@{/submitProduct}">
+        <select name="categoryId">
+            <th:block th:each="category : ${categories}">
+                <option th:text="${category.name}" th:value="${category.id}"></option>
+            </th:block>
+<!--        <select name="categoryId">-->
+<!--            <option th:each="${categories}"-->
+<!--                    th:text="${category.name}"-->
+<!--                    th:value="${category.id}"></option>-->
+        </select>
+        <input th:value="${product.name}" placeholder="name">
+        <input th:value="${product.price}" placeholder="price">
+        <input th:value="${product.discount}" placeholder="discount">
+    </form>
+</body>
+</html>
